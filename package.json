@@ -1,0 +1,29 @@
+{
+  "name": "mergejs",
+  "version": "1.0.0",
+  "description": "Simple command line shell script to merge and compress your javascript files in a single file. It uses the [Closure compiler of Google](http://closure-compiler.appspot.com/) to compress the javascript.",
+  "main": "app.js",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "npm-watch": "^0.6.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0"
+  },
+  "scripts": {
+    "build": "babel src -d build && browserify build/app.js -o bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npm-watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "watch": {
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "js,html,css",
+      "quiet": false
+    }
+  }
+}
